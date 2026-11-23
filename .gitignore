@@ -1,0 +1,11 @@
+# Build artifacts
+*.o
+CuraEngineGUI
+minigl_sphere
+errore_di_compilazione
+
+# macOS system files
+.DS_Store
+
+# Local AmigaOS SDK (third-party dependency)
+/SDK/
