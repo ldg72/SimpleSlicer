@@ -1,6 +1,6 @@
 /*
 ** =========================================================================
-** CuraEngine 15.6.4 GUI Frontend for AmigaOS 4
+** SimpleSlicer - CuraEngine GUI Frontend for AmigaOS 4
 ** Built with MUI (Magic User Interface)
 ** =========================================================================
 */
@@ -331,15 +331,15 @@ int main(int argc, char *argv[])
     ** Build the MUI GUI Object Hierarchy
     */
     app = ApplicationObject,
-        MUIA_Application_Title,       "CuraEngine Frontend",
-        MUIA_Application_Version,     "$VER: CuraEngine-GUI 1.0 (2026.09.24)",
-        MUIA_Application_Copyright,   "Open Source Amiga Community",
-        MUIA_Application_Author,      "AmigaOS 4 Developer",
+        MUIA_Application_Title,       "SimpleSlicer",
+        MUIA_Application_Version,     "$VER: SimpleSlicer 1.0 (2026.09.24)",
+        MUIA_Application_Copyright,   "Copyright (C) 2026 Luca De Giovanni",
+        MUIA_Application_Author,      "Luca De Giovanni",
         MUIA_Application_Description, "MUI Frontend for 3D CuraEngine Slicer",
         MUIA_Application_Base,        "CURASLICER",
 
         SubWindow, win = WindowObject,
-            MUIA_Window_Title,    "CuraEngine 15.6.4 Slicer - AmigaOS 4",
+            MUIA_Window_Title,    "SimpleSlicer - AmigaOS 4",
             MUIA_Window_ID,       MAKE_ID('C','U','R','2'),
             MUIA_Window_Width,    950,
             MUIA_Window_Height,   600,
@@ -358,7 +358,7 @@ int main(int argc, char *argv[])
 
                     /* Title Header */
                     Child, TextObject,
-                        MUIA_Text_Contents, "\33c\33bCuraEngine 3D Slicer Configuration",
+                        MUIA_Text_Contents, "\33c\33bSimpleSlicer 3D Slicer Configuration",
                     End,
 
                     Child, VSpace(4),
@@ -749,7 +749,7 @@ int main(int argc, char *argv[])
                     /* Validate 3D Model Input File */
                     if (!stl_file || strlen(stl_file) == 0)
                     {
-                        MUI_Request(app, win, 0, "CuraEngine Slicer Error", "*_OK", "Please select a 3D model file (.stl, .lwo, .obj) before slicing!", TAG_END);
+                        MUI_Request(app, win, 0, "SimpleSlicer Error", "*_OK", "Please select a 3D model file (.stl, .lwo, .obj) before slicing!", TAG_END);
                         break;
                     }
 
@@ -857,7 +857,7 @@ int main(int argc, char *argv[])
                     printf("\n[SimpleSlicer] Invoking CuraEngine:\n%s\n\n", cmd_buffer);
 
                     /* Open dedicated AmigaOS CON: console window to display live output */
-                    BPTR console_win = Open("CON:50/50/850/450/CuraEngine Slicer Console Output/AUTO/WAIT/CLOSE", MODE_NEWFILE);
+                    BPTR console_win = Open("CON:50/50/850/450/SimpleSlicer Slicing Console Output/AUTO/WAIT/CLOSE", MODE_NEWFILE);
                     if (console_win)
                     {
                         ret_code = SystemTags(cmd_buffer,
@@ -874,11 +874,11 @@ int main(int argc, char *argv[])
 
                     if (ret_code == 0)
                     {
-                        MUI_Request(app, win, 0, "CuraEngine Slicer Success", "*_OK", "Slicing completed successfully!\nOutput file: %s", (ULONG)gcode_file, TAG_END);
+                        MUI_Request(app, win, 0, "SimpleSlicer Success", "*_OK", "Slicing completed successfully!\nOutput file: %s", (ULONG)gcode_file, TAG_END);
                     }
                     else
                     {
-                        MUI_Request(app, win, 0, "CuraEngine Slicer Warning", "*_OK", "CuraEngine execution finished with return code: %d\nPlease check C:CuraEngine installation.", (ULONG)ret_code, TAG_END);
+                        MUI_Request(app, win, 0, "SimpleSlicer Warning", "*_OK", "CuraEngine execution finished with return code: %d\nPlease check C:CuraEngine installation.", (ULONG)ret_code, TAG_END);
                     }
                 }
                 break;

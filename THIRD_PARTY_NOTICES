@@ -1,0 +1,13 @@
+The MIT license in LICENSE applies to the original SimpleSlicer code and
+documentation in this repository.
+
+External dependencies retain their respective copyrights and licenses,
+including the AmigaOS SDK, MUI, MiniGL, and CuraEngine. The SimpleSlicer MIT
+license does not relicense these dependencies or replace their terms.
+
+The local SDK/ directory is excluded from version control. Install the
+required development tools and libraries separately and retain the notices
+required by their licenses when distributing third-party components.
+
+CuraEngine is invoked as a separate executable at C:CuraEngine. This
+repository does not include the CuraEngine executable or its source code.

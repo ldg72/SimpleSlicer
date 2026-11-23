@@ -1,5 +1,5 @@
 # =========================================================================
-# Makefile for CuraEngine MUI Frontend (AmigaOS 4)
+# Makefile for SimpleSlicer (AmigaOS 4)
 # =========================================================================
 
 CC      = ppc-amigaos-gcc
@@ -17,7 +17,7 @@ CFLAGS  = $(OPT) $(WARN) -mcrt=$(CRT) -D__USE_INLINE__ $(REDEFINE)
 LDFLAGS = -mcrt=$(CRT) -Wl,--allow-multiple-definition
 LIBS    = -lglut -lGL -lGLU -lauto -lm
 
-TARGET  = CuraEngineGUI
+TARGET  = SimpleSlicer
 TARGET_MGL = minigl_sphere
 OBJS    = main.o lwo_parser.o settings_win.o mgl_viewport.o model_transform.o
 
